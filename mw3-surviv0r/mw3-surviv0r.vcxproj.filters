@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="files\osmium">
+      <UniqueIdentifier>{73d12949-95b5-49c5-acdd-7df3daad37e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\cheat">
+      <UniqueIdentifier>{4ede6aed-eab4-45f7-af9f-2b627b3f95d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features">
+      <UniqueIdentifier>{2c165546-8fc6-4666-8cac-74b36c6aaf2b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mw3-surviv0r.cpp">
+      <Filter>files</Filter>
+    </ClCompile>
+    <ClCompile Include="osmium\Memory\Hook\hook.cpp">
+      <Filter>files\osmium</Filter>
+    </ClCompile>
+    <ClCompile Include="osmium\Memory\Image_x64\image_x64.cpp">
+      <Filter>files\osmium</Filter>
+    </ClCompile>
+    <ClCompile Include="osmium\Memory\Image_x86\image_x86.cpp">
+      <Filter>files\osmium</Filter>
+    </ClCompile>
+    <ClCompile Include="osmium\Overlay\overlay.cpp">
+      <Filter>files\osmium</Filter>
+    </ClCompile>
+    <ClCompile Include="osmium\Memory\Process\process.cpp">
+      <Filter>files\osmium</Filter>
+    </ClCompile>
+    <ClCompile Include="osmium\Testing\test_cheat.cpp">
+      <Filter>files\osmium</Filter>
+    </ClCompile>
+    <ClCompile Include="osmium\Testing\test_overlay.cpp">
+      <Filter>files\osmium</Filter>
+    </ClCompile>
+    <ClCompile Include="mw3_cheat.cpp">
+      <Filter>files\cheat</Filter>
+    </ClCompile>
+    <ClCompile Include="mw3_overlay.cpp">
+      <Filter>files\cheat</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_watermark.cpp">
+      <Filter>files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_airstuck.cpp">
+      <Filter>files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_infinite_ammo.cpp">
+      <Filter>files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_better_armor.cpp">
+      <Filter>files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_xp_lover.cpp">
+      <Filter>files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_super_jump.cpp">
+      <Filter>files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_more_money.cpp">
+      <Filter>files\features</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="osmium\Testing\test_overlay.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Cheat\cheat.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Includings\custom_data_types.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Cheat\Feature\feature.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Memory\Hook\hook.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Memory\Image_x64\image_x64.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Memory\Image_x86\image_x86.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Includings\modules.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Overlay\overlay.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Memory\Process\process.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Testing\test_cheat.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="mw3_cheat.hpp">
+      <Filter>files\cheat</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.hpp">
+      <Filter>files\cheat</Filter>
+    </ClInclude>
+    <ClInclude Include="mw3_overlay.hpp">
+      <Filter>files\cheat</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.hpp">
+      <Filter>files\cheat</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.hpp">
+      <Filter>files\cheat</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_watermark.hpp">
+      <Filter>files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_airstuck.hpp">
+      <Filter>files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_infinite_ammo.hpp">
+      <Filter>files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_better_armor.hpp">
+      <Filter>files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_xp_lover.hpp">
+      <Filter>files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_super_jump.hpp">
+      <Filter>files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_more_money.hpp">
+      <Filter>files\features</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

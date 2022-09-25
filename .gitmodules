@@ -1,0 +1,3 @@
+[submodule "mw3-surviv0r/osmium"]
+	path = mw3-surviv0r/osmium
+	url = https://github.com/cragson/osmium
