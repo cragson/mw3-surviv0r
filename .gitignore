@@ -1,0 +1,9 @@
+Debug/
+Release/
+x64/
+.vs/
+
+*.idb
+*.exe
+*.dll
+*.rcnet
