@@ -6,6 +6,9 @@
 
 void ft_super_jump::tick()
 {
+	if( !Globals::g_pMenu->get_value_of_setting< bool >( "Other", "Superjump" ) )
+		return;
+
 	if( utils::is_key_pressed( VK_SPACE ) && Globals::g_pProcess->read< float >(
 		Globals::g_pProcess->get_image_base( L"iw5sp.exe" ) + Offsets::survival_super_jump
 	) <= 12.f )

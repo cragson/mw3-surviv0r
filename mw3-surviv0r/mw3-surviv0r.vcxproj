@@ -145,13 +145,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="entity_manager.cpp" />
+    <ClCompile Include="ft_aimbot.cpp" />
     <ClCompile Include="ft_airstuck.cpp" />
     <ClCompile Include="ft_better_armor.cpp" />
+    <ClCompile Include="ft_enemy_teleport.cpp" />
+    <ClCompile Include="ft_esp.cpp" />
+    <ClCompile Include="ft_godmode.cpp" />
     <ClCompile Include="ft_infinite_ammo.cpp" />
     <ClCompile Include="ft_more_money.cpp" />
     <ClCompile Include="ft_super_jump.cpp" />
     <ClCompile Include="ft_watermark.cpp" />
+    <ClCompile Include="ft_weak_enemies.cpp" />
     <ClCompile Include="ft_xp_lover.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="mw3-surviv0r.cpp" />
     <ClCompile Include="mw3_cheat.cpp" />
     <ClCompile Include="mw3_overlay.cpp" />
@@ -164,14 +171,26 @@
     <ClCompile Include="osmium\Testing\test_overlay.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine_math.hpp" />
+    <ClInclude Include="entity_manager.hpp" />
+    <ClInclude Include="ft_aimbot.hpp" />
     <ClInclude Include="ft_airstuck.hpp" />
     <ClInclude Include="ft_better_armor.hpp" />
+    <ClInclude Include="ft_enemy_teleport.hpp" />
+    <ClInclude Include="ft_esp.hpp" />
+    <ClInclude Include="ft_fovchanger.hpp" />
+    <ClInclude Include="ft_funmode.hpp" />
+    <ClInclude Include="ft_godmode.hpp" />
     <ClInclude Include="ft_infinite_ammo.hpp" />
     <ClInclude Include="ft_more_money.hpp" />
     <ClInclude Include="ft_super_jump.hpp" />
     <ClInclude Include="ft_watermark.hpp" />
+    <ClInclude Include="ft_weak_enemies.h" />
     <ClInclude Include="ft_xp_lover.hpp" />
+    <ClInclude Include="game_structs.hpp" />
     <ClInclude Include="globals.hpp" />
+    <ClInclude Include="Settings.hpp" />
+    <ClInclude Include="menu.hpp" />
     <ClInclude Include="mw3_cheat.hpp" />
     <ClInclude Include="mw3_overlay.hpp" />
     <ClInclude Include="offsets.hpp" />

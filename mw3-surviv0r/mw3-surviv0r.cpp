@@ -1,7 +1,5 @@
 #include <iostream>
-
 #include "globals.hpp"
-#include "offsets.hpp"
 
 int main()
 {
@@ -24,8 +22,16 @@ int main()
 
 	printf( "done!\n" );
 
+	Globals::g_pCheat->print_offsets();
 
-	Globals::g_pCheat->print_features();
+	printf( "[>] Preparing the overlay.." );
+
+	while( !Globals::g_pOverlay->initialize( Globals::g_pProcess->get_window_handle() ) )
+		Sleep( 420 );
+
+	printf( "done!\n" );
+
+	printf( "\n[!] Press INSERT to open the menu.\n" );
 
 	printf( "Have fun! ;-)\n" );
 
@@ -36,7 +42,10 @@ int main()
 
 		Globals::g_pCheat->run();
 
-		Sleep( 3 );
+		if( Globals::g_pMenu->is_active() )
+			Globals::g_pMenu->tick();
+
+		Sleep( 1 );
 	}
 
 	Globals::g_pCheat->shutdown();
