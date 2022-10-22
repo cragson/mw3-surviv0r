@@ -37,4 +37,34 @@ namespace Offsets
 	inline std::ptrdiff_t survival_z_coord = 0xF81D68;
 
 	inline std::ptrdiff_t survival_super_jump = 0xF81D78;
+
+	inline std::uintptr_t refdef = std::uintptr_t();
+
+	// 0 := not ingame
+	// 4 := connecting
+	// 6 := fully connected
+	inline std::uintptr_t connection_state = std::uintptr_t();
+
+	inline std::uintptr_t muelltonne = std::uintptr_t();
+
+	inline std::uintptr_t muelltonne_max = std::uintptr_t();
+
+	inline std::ptrdiff_t c4_ammo = 0xF82154;
+
+	inline std::uintptr_t view_x = 0xB36408;
+	inline std::uintptr_t view_y = 0xB3640C;
+
+	inline std::uintptr_t cgfov_ptr = std::uintptr_t();
+
+	inline std::uintptr_t speed_ptr = std::uintptr_t();
+
+	inline std::uintptr_t gravity_ptr = std::uintptr_t();
+
+	inline std::uintptr_t entity_list = std::uintptr_t();
+
+	inline std::uintptr_t DrawUIShowList = std::uintptr_t();
+
+	inline std::uintptr_t fn_R_DrawXModelSkinnedCached = std::uintptr_t();
+
+	inline std::uintptr_t fn_Cbuf_AddText = std::uintptr_t();
 }

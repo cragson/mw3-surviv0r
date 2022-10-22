@@ -18,11 +18,53 @@
     <Filter Include="files\features">
       <UniqueIdentifier>{2c165546-8fc6-4666-8cac-74b36c6aaf2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="files\cheat\SDK">
+      <UniqueIdentifier>{d5b50cf5-283c-40c7-a4f2-08895e3cc278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Airstuck">
+      <UniqueIdentifier>{63a0d4c4-4328-4c3a-b4e5-53b64771c7e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Not done">
+      <UniqueIdentifier>{e76bed49-95b5-4378-b605-c3980c049f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\ESP">
+      <UniqueIdentifier>{09a1649f-c805-43b7-a08d-e98e450ab077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Infinite Ammo">
+      <UniqueIdentifier>{e6c3040d-39f2-4854-aa0d-65d31cafb084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Superjump">
+      <UniqueIdentifier>{ed20ac9b-cc1e-49f7-af95-9c479043ffa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Watermark">
+      <UniqueIdentifier>{31bfd9b8-74dc-4141-a28e-e1ac5b11b73d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Enemy Teleport">
+      <UniqueIdentifier>{13b40fa3-6de9-47ae-b782-2f58c7c68478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Godmode">
+      <UniqueIdentifier>{29e5bfcc-dd53-4e8c-8993-83bf4cf2805e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Weak Enemies">
+      <UniqueIdentifier>{02508f7c-7fc4-4dec-9333-67bfbd115300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\cheat\Overlay">
+      <UniqueIdentifier>{4eb9aa9e-525a-4c0e-8e22-0b76dc266850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Aimbot">
+      <UniqueIdentifier>{af36dfc7-5f99-404b-9e93-8438533978e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Fovchanger">
+      <UniqueIdentifier>{f7d8d629-86b7-4516-bc00-4467f4344a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\features\Funmode">
+      <UniqueIdentifier>{e91f5420-ec78-4a56-a912-b7dbe28d0021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="files\cheat\Menu">
+      <UniqueIdentifier>{2a8a3472-15a0-404a-b99f-0772b3052100}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="mw3-surviv0r.cpp">
-      <Filter>files</Filter>
-    </ClCompile>
     <ClCompile Include="osmium\Memory\Hook\hook.cpp">
       <Filter>files\osmium</Filter>
     </ClCompile>
@@ -47,29 +89,53 @@
     <ClCompile Include="mw3_cheat.cpp">
       <Filter>files\cheat</Filter>
     </ClCompile>
-    <ClCompile Include="mw3_overlay.cpp">
-      <Filter>files\cheat</Filter>
-    </ClCompile>
-    <ClCompile Include="ft_watermark.cpp">
-      <Filter>files\features</Filter>
+    <ClCompile Include="entity_manager.cpp">
+      <Filter>files\cheat\SDK</Filter>
     </ClCompile>
     <ClCompile Include="ft_airstuck.cpp">
-      <Filter>files\features</Filter>
-    </ClCompile>
-    <ClCompile Include="ft_infinite_ammo.cpp">
-      <Filter>files\features</Filter>
+      <Filter>files\features\Airstuck</Filter>
     </ClCompile>
     <ClCompile Include="ft_better_armor.cpp">
-      <Filter>files\features</Filter>
-    </ClCompile>
-    <ClCompile Include="ft_xp_lover.cpp">
-      <Filter>files\features</Filter>
-    </ClCompile>
-    <ClCompile Include="ft_super_jump.cpp">
-      <Filter>files\features</Filter>
+      <Filter>files\features\Not done</Filter>
     </ClCompile>
     <ClCompile Include="ft_more_money.cpp">
-      <Filter>files\features</Filter>
+      <Filter>files\features\Not done</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_xp_lover.cpp">
+      <Filter>files\features\Not done</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_esp.cpp">
+      <Filter>files\features\ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_infinite_ammo.cpp">
+      <Filter>files\features\Infinite Ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_super_jump.cpp">
+      <Filter>files\features\Superjump</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_watermark.cpp">
+      <Filter>files\features\Watermark</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_enemy_teleport.cpp">
+      <Filter>files\features\Enemy Teleport</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_godmode.cpp">
+      <Filter>files\features\Godmode</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_weak_enemies.cpp">
+      <Filter>files\features\Weak Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="mw3_overlay.cpp">
+      <Filter>files\cheat\Overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_aimbot.cpp">
+      <Filter>files\features\Aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>files\cheat\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="mw3-surviv0r.cpp">
+      <Filter>files\cheat</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,35 +178,71 @@
     <ClInclude Include="utils.hpp">
       <Filter>files\cheat</Filter>
     </ClInclude>
+    <ClInclude Include="entity_manager.hpp">
+      <Filter>files\cheat\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_airstuck.hpp">
+      <Filter>files\features\Airstuck</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_better_armor.hpp">
+      <Filter>files\features\Not done</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_more_money.hpp">
+      <Filter>files\features\Not done</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_xp_lover.hpp">
+      <Filter>files\features\Not done</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_esp.hpp">
+      <Filter>files\features\ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_infinite_ammo.hpp">
+      <Filter>files\features\Infinite Ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_super_jump.hpp">
+      <Filter>files\features\Superjump</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_watermark.hpp">
+      <Filter>files\features\Watermark</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_enemy_teleport.hpp">
+      <Filter>files\features\Enemy Teleport</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_godmode.hpp">
+      <Filter>files\features\Godmode</Filter>
+    </ClInclude>
+    <ClInclude Include="ft_weak_enemies.h">
+      <Filter>files\features\Weak Enemies</Filter>
+    </ClInclude>
     <ClInclude Include="mw3_overlay.hpp">
-      <Filter>files\cheat</Filter>
+      <Filter>files\cheat\Overlay</Filter>
     </ClInclude>
     <ClInclude Include="globals.hpp">
       <Filter>files\cheat</Filter>
     </ClInclude>
     <ClInclude Include="offsets.hpp">
-      <Filter>files\cheat</Filter>
+      <Filter>files\cheat\SDK</Filter>
     </ClInclude>
-    <ClInclude Include="ft_watermark.hpp">
-      <Filter>files\features</Filter>
+    <ClInclude Include="ft_aimbot.hpp">
+      <Filter>files\features\Aimbot</Filter>
     </ClInclude>
-    <ClInclude Include="ft_airstuck.hpp">
-      <Filter>files\features</Filter>
+    <ClInclude Include="engine_math.hpp">
+      <Filter>files\cheat\SDK</Filter>
     </ClInclude>
-    <ClInclude Include="ft_infinite_ammo.hpp">
-      <Filter>files\features</Filter>
+    <ClInclude Include="ft_fovchanger.hpp">
+      <Filter>files\features\Fovchanger</Filter>
     </ClInclude>
-    <ClInclude Include="ft_better_armor.hpp">
-      <Filter>files\features</Filter>
+    <ClInclude Include="ft_funmode.hpp">
+      <Filter>files\features\Funmode</Filter>
     </ClInclude>
-    <ClInclude Include="ft_xp_lover.hpp">
-      <Filter>files\features</Filter>
+    <ClInclude Include="game_structs.hpp">
+      <Filter>files\cheat\SDK</Filter>
     </ClInclude>
-    <ClInclude Include="ft_super_jump.hpp">
-      <Filter>files\features</Filter>
+    <ClInclude Include="menu.hpp">
+      <Filter>files\cheat\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="ft_more_money.hpp">
-      <Filter>files\features</Filter>
+    <ClInclude Include="Settings.hpp">
+      <Filter>files\cheat\Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
