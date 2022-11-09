@@ -1,4 +1,7 @@
 # MW3 Surviv0r
+An external cheat for the survival mode in Call of Duty Modern Warfare 3 (Steam), written in C++.
+
+![](https://i.imgur.com/gd9hFj7.png)
 
 As usual I reversed an old game and had quite some fun, which ended in me writing this cheat for MW3. The process of writing the cheat would be much more fun, if this cheat would be internal but as my framework osmium was designed for external cheats, I had to implement most features externally. This was and is a challenge for myself, especially as the cheat isn't as cpu efficient as I would wish it is. Also there are some bugs which still exist and needs to be fixed - let's see if I got any motivation in the future.
 Please take these things into consideration before using the cheat, thank you.
