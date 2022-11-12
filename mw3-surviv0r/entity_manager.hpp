@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "game_structs.hpp"
+#include "offsets.hpp"
 
 constexpr auto ENTITY_COUNT = 1000;
 
@@ -32,7 +33,15 @@ public:
 		this->m_centities.resize( sizeof( centity ) * ENTITY_COUNT );
 	}
 
-	[[nodiscard]] static std::uintptr_t get_entity_ptr_by_index( uint16_t idx );
+	[[nodiscard]] static constexpr std::uintptr_t get_entity_ptr_by_index( uint16_t idx )
+	{
+		return Offsets::muelltonne + idx * 0x270;
+	}
+
+	[[nodiscard]] static constexpr std::uintptr_t get_centity_ptr_by_index(uint16_t idx)
+	{
+		return Offsets::entity_list + idx * 0x194;
+	}
 
 	[[nodiscard]] bool get_entity_by_index( uint32_t idx, game_entity* entity_ptr ) const;
 
