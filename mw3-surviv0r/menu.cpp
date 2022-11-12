@@ -6,11 +6,16 @@
 void menu::on_first_activation()
 {
 	auto aimbot = std::make_unique< SettingPrimary >( "Aimbot" );
-	aimbot->add_secondary< bool >( "active", false );
-	aimbot->add_secondary< int32_t >( "fov", 120 );
+	aimbot->add_secondary< bool >( "Active", false );
+	aimbot->add_secondary< int32_t >( "FoV", 120 );
 
 	auto visuals = std::make_unique< SettingPrimary >( "Visuals" );
 	visuals->add_secondary< bool >( "Player ESP", false );
+	visuals->add_secondary< int32_t >("Box Width", 1);
+	visuals->add_secondary< bool >("Healthbar", false);
+	visuals->add_secondary< bool >("Distance", false);
+	visuals->add_secondary< bool >("Snapline", false);
+	visuals->add_secondary< int32_t >("Line Width", 1);
 	visuals->add_secondary< bool >( "Weapon ESP", false );
 	visuals->add_secondary< bool >( "Crosshair", false );
 
@@ -113,12 +118,12 @@ void menu::tick()
 
 			if( current_setting->get_type() == ESettingType::SET_INT )
 				reinterpret_cast< SettingInt* >( current_setting )->set_value(
-					reinterpret_cast< SettingInt* >( current_setting )->get_value() - 10
+					reinterpret_cast< SettingInt* >( current_setting )->get_value() - 1
 				);
 
 			if( current_setting->get_type() == ESettingType::SET_FLOAT )
 				reinterpret_cast< SettingFloat* >( current_setting )->set_value(
-					reinterpret_cast< SettingFloat* >( current_setting )->get_value() - 10.f
+					reinterpret_cast< SettingFloat* >( current_setting )->get_value() - 1.f
 				);
 
 			Sleep( 200 );
@@ -135,12 +140,12 @@ void menu::tick()
 
 			if( current_setting->get_type() == ESettingType::SET_INT )
 				reinterpret_cast< SettingInt* >( current_setting )->set_value(
-					reinterpret_cast< SettingInt* >( current_setting )->get_value() + 10
+					reinterpret_cast< SettingInt* >( current_setting )->get_value() + 1
 				);
 
 			if( current_setting->get_type() == ESettingType::SET_FLOAT )
 				reinterpret_cast< SettingFloat* >( current_setting )->set_value(
-					reinterpret_cast< SettingFloat* >( current_setting )->get_value() + 10.f
+					reinterpret_cast< SettingFloat* >( current_setting )->get_value() + 1.f
 				);
 
 			Sleep( 200 );
@@ -216,7 +221,7 @@ void menu::on_render()
 
 	// draw header
 	Globals::g_pOverlay->draw_filled_rect( mid_w - ( off_x / 2 ), off_y - 40, off_x * 2, 40, 150, 150, 150 );
-	Globals::g_pOverlay->draw_string( "mw3-surviv0r by cragson", mid_w + ( off_x / 2 ) - 96, off_y - 40, 0, 0, 0 );
+	Globals::g_pOverlay->draw_string( "mw3-surviv0r by cragson", mid_w + ( off_x / 2 ) - 96, off_y - 30, 0, 0, 0 );
 
 	// if no primary was selected
 	if( this->m_SelectedPrimaryName.empty() )
@@ -311,10 +316,10 @@ void menu::on_render()
 
 					if( sec_setting->get_type() == ESettingType::SET_BOOL )
 						Globals::g_pOverlay->draw_string(
-							std::format(
+							std::vformat(
 								"< {} >",
-								reinterpret_cast< SettingBool* >( sec_setting )->get_value() ? "true" : "false"
-							),
+								std::make_format_args(reinterpret_cast< SettingBool* >( sec_setting )->get_value() ? "true" : "false"
+							)),
 							mid_w + ( off_x / 2 ) + 100,
 							off_y,
 							20,
@@ -324,7 +329,7 @@ void menu::on_render()
 
 					if( sec_setting->get_type() == ESettingType::SET_INT )
 						Globals::g_pOverlay->draw_string(
-							std::format( "< {} >", reinterpret_cast< SettingInt* >( sec_setting )->get_value() ),
+							std::vformat( "< {} >", std::make_format_args(reinterpret_cast< SettingInt* >( sec_setting )->get_value() )),
 							mid_w + ( off_x / 2 ) + 100,
 							off_y,
 							20,
@@ -334,14 +339,14 @@ void menu::on_render()
 
 					if( sec_setting->get_type() == ESettingType::SET_FLOAT )
 						Globals::g_pOverlay->draw_string(
-							std::format( "< {.2f} >", reinterpret_cast< SettingFloat* >( sec_setting )->get_value() ),
+							std::vformat( "< {.2f} >", std::make_format_args( reinterpret_cast< SettingFloat* >( sec_setting )->get_value() ) ),
 							mid_w + ( off_x / 2 ) + 100,
 							off_y,
 							20,
 							20,
 							20
 						);
-
+					const auto test = std::vformat("{}", std::make_format_args( sec_setting->get_type_as_str()));
 					off_y += 30;
 				}
 			}

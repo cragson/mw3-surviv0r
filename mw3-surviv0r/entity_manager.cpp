@@ -4,11 +4,6 @@
 
 #include "globals.hpp"
 
-std::uintptr_t entity_manager::get_entity_ptr_by_index( const uint16_t idx )
-{
-	return Offsets::muelltonne + idx * 0x270;
-}
-
 bool entity_manager::get_entity_by_index( const uint32_t idx, game_entity* entity_ptr ) const
 {
 	if( idx < 0 || !entity_ptr )
@@ -69,11 +64,18 @@ void entity_manager::apply_filter()
 		if( obj.m_iType != 13 && obj.m_iType != 2 )
 			continue;
 
-		const auto is_same_ent = [&obj]( const centity& ce )
+		/* TODO: Remove later
+		for( const auto & ent : this->m_centities )
+			if( ent.m_clientnum == obj.m_iClientNum )
+				this->m_entities.push_back(std::make_unique< public_entity >(obj, ent));
+		*/
+
+		const auto is_same_ent = [&obj](const centity& ce)
 		{
 			return obj.m_iClientNum == ce.m_clientnum;
 		};
 
+		
 		if( const auto obj_ce = std::ranges::find_if(
 				this->m_centities.begin(),
 				this->m_centities.end(),
@@ -81,5 +83,6 @@ void entity_manager::apply_filter()
 			); obj_ce !=
 			this->m_centities.end() )
 			this->m_entities.push_back( std::make_unique< public_entity >( obj, *obj_ce ) );
+		
 	}
 }

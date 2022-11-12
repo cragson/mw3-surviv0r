@@ -12,11 +12,11 @@ void mw3_overlay::render()
 
 	const auto fg_hwnd = GetForegroundWindow();
 
-	if( fg_hwnd == this->m_TargetWindow )
+	if (fg_hwnd == this->m_TargetWindow)
 	{
-		const auto con_state = Globals::g_pProcess->read< int32_t >( Offsets::connection_state );
+		const auto con_state = Globals::g_pProcess->read< int32_t >(Offsets::connection_state);
 
-		if( con_state == 0 || con_state == 4 )
+		if (con_state == 0 || con_state == 4)
 		{
 			this->draw_filled_rect(
 				this->get_overlay_width() / 2 - 150,
@@ -38,37 +38,38 @@ void mw3_overlay::render()
 			);
 		}
 		// client is connected
-		if( con_state == 6 )
+		if (con_state == 6)
 		{
-			if( utils::is_key_pressed( Globals::g_pMenu->get_virtual_key_code() ) )
+			if (utils::is_key_pressed(Globals::g_pMenu->get_virtual_key_code()))
 			{
 				Globals::g_pMenu->toggle();
 
-				Sleep( 150 );
+				Sleep(150);
 			}
 
-			if( Globals::g_pMenu->is_active() )
+			if (Globals::g_pMenu->is_active())
 				Globals::g_pMenu->on_render();
 
 			const auto features = Globals::g_pCheat->get_features_as_ptr();
 
-			for( auto it = features->begin(); it != features->end(); ++it )
+			for (auto it = features->begin(); it != features->end(); ++it)
 			{
 				const auto current_feature = it->get();
 
-				if( !current_feature->should_be_drawn() )
+				if (!current_feature->should_be_drawn())
 					continue;
 
-				if( current_feature->is_active() )
+				if (current_feature->is_active())
 				{
 					current_feature->on_render();
 
-					Sleep( 1 );
+					Sleep(1);
 				}
 			}
 		}
 	}
-
+	else
+		Sleep(1);
 	this->m_Device->EndScene();
 	this->m_Device->PresentEx( nullptr, nullptr, nullptr, nullptr, NULL );
 	this->m_Device->Clear( NULL, nullptr, D3DCLEAR_TARGET, D3DCOLOR_ARGB( 0, 0, 0, 0 ), 1.0f, NULL );
