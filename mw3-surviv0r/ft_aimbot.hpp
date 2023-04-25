@@ -18,6 +18,7 @@ public:
 
 	void on_render() override;
 
+	void on_shutdown() override {}
 private:
 
 	int32_t m_aim_x;

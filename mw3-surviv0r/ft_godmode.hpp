@@ -13,4 +13,6 @@ public:
 	void on_render() override {}
 
 	void tick() override;
+
+	void on_shutdown() override {}
 };

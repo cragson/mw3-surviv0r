@@ -15,6 +15,8 @@ public:
 
 	void on_disable() override {}
 
+	void on_shutdown() override {}
+
 	void tick() override
 	{
 		const auto speedptr = Globals::g_pProcess->read< std::uintptr_t >( Offsets::speed_ptr );

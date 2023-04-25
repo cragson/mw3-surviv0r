@@ -11,6 +11,8 @@ public:
 
 	void tick() override;
 	void on_render() override;
+	void on_shutdown() override {}
+	
 
 	[[nodiscard]] size_t get_amount_of_primaries() const noexcept
 	{

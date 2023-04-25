@@ -14,4 +14,6 @@ public:
 	void on_enable() override {}
 
 	void tick() override;
+
+	void on_shutdown() override {}
 };

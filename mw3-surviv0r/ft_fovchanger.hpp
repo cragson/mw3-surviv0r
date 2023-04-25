@@ -15,6 +15,8 @@ public:
 
 	void on_render() override {}
 
+	void on_shutdown() override {}
+
 	void tick() override
 	{
 		const auto ptr = Globals::g_pProcess->read< std::uintptr_t >( Offsets::cgfov_ptr );

@@ -14,7 +14,7 @@ void ft_aimbot::tick()
 
 	if( utils::is_key_pressed( VK_LMENU ) )
 	{
-		const auto width_mid = Globals::g_pOverlay->get_overlay_width() / 2;
+		const auto width_mid  = Globals::g_pOverlay->get_overlay_width() / 2;
 		const auto height_mid = Globals::g_pOverlay->get_overlay_height() / 2;
 
 		for( const auto& pub : Interfaces::g_IEntity->m_entities )
@@ -28,17 +28,14 @@ void ft_aimbot::tick()
 			Vector2 aim_bottom, aim_up = {};
 
 			if( EngineMath::world_to_screen( pub->m_game_entity.m_vecPosition, aim_bottom ) &&
-				EngineMath::world_to_screen(
-					pub->m_game_entity.m_vecPositionUp,
-					aim_up
-				) )
+				EngineMath::world_to_screen( pub->m_game_entity.m_vecPositionUp, aim_up ) )
 			{
-				const auto aim_x = static_cast< int32_t >( aim_bottom.x + ( aim_up.x - aim_bottom.x ) );
-				const auto aim_y = static_cast< int32_t >( aim_bottom.y + ( aim_up.y - aim_bottom.y ) );
+				const auto aim_x = static_cast< int32_t >( aim_up.x );
+				const auto aim_y = static_cast< int32_t >( aim_up.y );
 
 				// check now if aim point is in fov
-				const auto dx = aim_x - width_mid;
-				const auto dy = aim_y - height_mid;
+				const auto dx  = aim_x - width_mid;
+				const auto dy  = aim_y - height_mid;
 				const auto dst = sqrtf( dx * dx * 1.f + dy * dy * 1.f );
 
 				// enemy is in fov
@@ -60,16 +57,10 @@ void ft_aimbot::on_render()
 	if( fov <= 0 )
 		return;
 
-	const auto width_mid = Globals::g_pOverlay->get_overlay_width() / 2;
+	const auto width_mid  = Globals::g_pOverlay->get_overlay_width() / 2;
 	const auto height_mid = Globals::g_pOverlay->get_overlay_height() / 2;
 
-	Globals::g_pOverlay->draw_rect(
-		Globals::g_pOverlay->get_overlay_width() / 2 - ( fov / 2 ),
-		Globals::g_pOverlay->get_overlay_height() / 2 - ( fov / 2 ),
-		fov,
-		fov,
-		0,
-		255,
-		255
+	Globals::g_pOverlay->draw_rect( Globals::g_pOverlay->get_overlay_width() / 2 - ( fov / 2 ),
+	                                Globals::g_pOverlay->get_overlay_height() / 2 - ( fov / 2 ), fov, fov, 0, 255, 255
 	);
 }
