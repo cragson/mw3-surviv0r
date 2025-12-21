@@ -244,5 +244,11 @@
     <ClInclude Include="Settings.hpp">
       <Filter>files\cheat\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="osmium\Memory\RegisterDumper\registercontext.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
+    <ClInclude Include="osmium\Memory\SharedMemoryInstance\sharedmemoryinstance.hpp">
+      <Filter>files\osmium</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

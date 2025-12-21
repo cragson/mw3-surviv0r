@@ -314,39 +314,21 @@ void menu::on_render()
 						0
 					);
 
-					if( sec_setting->get_type() == ESettingType::SET_BOOL )
+					if (sec_setting->get_type() == ESettingType::SET_BOOL)
 						Globals::g_pOverlay->draw_string(
-							std::vformat(
-								"< {} >",
-								std::make_format_args(reinterpret_cast< SettingBool* >( sec_setting )->get_value() ? "true" : "false"
-							)),
-							mid_w + ( off_x / 2 ) + 100,
-							off_y,
-							20,
-							20,
-							20
+							std::format("< {} >", reinterpret_cast<SettingBool*>(sec_setting)->get_value() ? "true" : "false"), mid_w + (off_x / 2) + 100, off_y, 20, 20, 20
 						);
 
-					if( sec_setting->get_type() == ESettingType::SET_INT )
+					if (sec_setting->get_type() == ESettingType::SET_INT)
 						Globals::g_pOverlay->draw_string(
-							std::vformat( "< {} >", std::make_format_args(reinterpret_cast< SettingInt* >( sec_setting )->get_value() )),
-							mid_w + ( off_x / 2 ) + 100,
-							off_y,
-							20,
-							20,
-							20
+							std::format("< {} >", reinterpret_cast<SettingInt*>(sec_setting)->get_value()), mid_w + (off_x / 2) + 100, off_y, 20, 20, 20
 						);
 
-					if( sec_setting->get_type() == ESettingType::SET_FLOAT )
+					if (sec_setting->get_type() == ESettingType::SET_FLOAT)
 						Globals::g_pOverlay->draw_string(
-							std::vformat( "< {.2f} >", std::make_format_args( reinterpret_cast< SettingFloat* >( sec_setting )->get_value() ) ),
-							mid_w + ( off_x / 2 ) + 100,
-							off_y,
-							20,
-							20,
-							20
+							std::format("< {:.2f} >", reinterpret_cast<SettingFloat*>(sec_setting)->get_value()), mid_w + (off_x / 2) + 100, off_y, 20, 20, 20
 						);
-					const auto test = std::vformat("{}", std::make_format_args( sec_setting->get_type_as_str()));
+					const auto test = std::format("{}", sec_setting->get_type_as_str());
 					off_y += 30;
 				}
 			}
